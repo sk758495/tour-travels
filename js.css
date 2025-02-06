@@ -1,0 +1,61 @@
+/* Fade-in animation */
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+
+/* Bounce-up animation */
+@keyframes bounceUp {
+    0% {
+        transform: translateY(50px);
+    }
+    30% {
+        transform: translateY(-15px); /* Bounce up slightly */
+    }
+    50% {
+        transform: translateY(10px); /* Bounce back down */
+    }
+    70% {
+        transform: translateY(-5px); /* Bounce a little higher */
+    }
+    100% {
+        transform: translateY(0); /* Settle at original position */
+    }
+}
+
+/* Apply the bounce-up effect */
+.bounce-up {
+    animation: bounceUp 1s ease-out forwards;
+}
+
+/* Fade-in and slide-up animation with delay */
+.fade-in-slide-up {
+    opacity: 1 !important;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+    animation: fadeInSlideUp 1s ease forwards;
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Start off-screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+
+/* Initial state: hidden and translated up */
+.container-xxl .row > div {
+    opacity: 0;
+    transform: translateY(50px); /* Translate the element upward initially */
+}
+
+
+

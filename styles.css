@@ -1,0 +1,437 @@
+    /* Reset & Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        background-color: #f1f1f1;
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    /* Custom hover behavior for dropdown menus */
+    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    /* Optional: To ensure the dropdown remains visible when hovering over the dropdown itself */
+    .navbar-nav .nav-item.dropdown:hover > .nav-link {
+        color: #0d6efd;  /* Change color on hover */
+    }
+
+    /* Optional: Add transition for smooth effect */
+    .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+    }
+
+    /* text video start here*/
+    #trevel-text{
+        height: 50vh;
+        position: relative;
+    }
+
+    #trevel-text video {
+        width: 100%;
+        height: 50%;
+    }
+    .text-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #000000;
+        height: 50%;
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 200px!important;  /* Increased font size */
+        font-weight: 900;
+        mix-blend-mode: multiply;
+    }
+    
+    /* text video end here*/
+
+    /* Hero Section */
+    .hero-section {
+        background-color: #f8f9fa; /* Light background for the hero section */
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #343a40;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        color: #6c757d;
+    }
+
+    /* Cart Section */
+    .cart {
+        border: 1px solid #ddd;
+        padding: 15px;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .cart h4 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .cart p {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    /* Carousel Styles */
+    .carousel-inner img {
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    /* Make sure the images inside the carousel fill the space properly */
+    .carousel-images {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel-images img {
+        object-fit: cover;  /* Ensures the image fills the space without stretching */
+        height: 100%;
+    }
+
+    /* Optional: You can adjust the height to a specific value if needed */
+    .carousel-inner img {
+        height: auto;
+        max-height: 500px;  /* Optional: Adjust this for the image's height */
+    }
+
+    .cart-image {
+        max-height: 200px;  /* Control image height in the cart section */
+        object-fit: cover;  /* Ensure images cover the space without distortion */
+        margin: 3px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px;
+    }
+
+    /* Make sure the images inside the carousel fill the space properly */
+    .carousel-images {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    /* Animation for the image coming from the top */
+    @keyframes slideFromTop {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Animation for the image coming from the bottom */
+    @keyframes slideFromBottom {
+        0% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Apply animations to images */
+    .carousel-images img:nth-child(1) {
+        animation: slideFromTop 1s ease-out forwards;
+    }
+
+    .carousel-images img:nth-child(2) {
+        animation: slideFromBottom 1s ease-out forwards;
+    }
+
+    /* Optional: Adjust text color for better contrast */
+    h1, p {
+        z-index: 1; /* Ensure the text stays above the video */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    /* Hero Content */
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 2;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+
+    .cta-button {
+        background-color: #f6c00d;
+        color: #164685;
+        font-size: 1.2rem;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .cta-button:hover {
+        background-color: #ffdb4d;
+        transform: translateY(-5px);
+    }
+
+    /* Destinations Section */
+    .destinations {
+        padding: 80px 0;
+        background-color: #fff;
+        text-align: center;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        font-weight: 600;
+    }
+
+    .destinations-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+
+    .destination {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        perspective: 1000px;  /* To give a 3D effect when flipping */
+    }
+
+    .destination img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.5s ease, opacity 0.5s ease;  /* Smooth transitions for transform and opacity */
+    }
+
+    .destination:hover img {
+        transform: rotateY(180deg);  /* Flips the image */
+        opacity: 0.7;  /* Fades out the image */
+    }
+
+    .destination-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    /* Adding a container to hold the destination text and making sure it's visible */
+    .destination:hover .destination-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        opacity: 1;
+        z-index: 1;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Why Choose Us Section */
+    .why-us {
+        position: relative;
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    /* Background Video Styling */
+    .why-us::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('img/2439510-hd_1920_1080_30fps.mp4') no-repeat center center; /* Fallback image if video doesn't load */
+        background-size: cover;
+        z-index: -1;
+        opacity: 0.7;  /* Optional: to dim the background video */
+    }
+
+    /* Add Video as Background */
+    .why-us video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  /* Makes sure the video covers the whole section */
+        z-index: -1;
+        transform: rotate(0deg);  /* video direct convert into up side */
+    }
+
+    /* Features Section */
+    .features {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    .feature {
+        text-align: center;
+        width: 200px;
+        box-shadow: 0 0 10px 0.7px;
+        border-radius: 10px;
+        color: black;
+    }
+
+    .feature i {
+        font-size: 2rem;
+        margin-top: 20px;
+        color: #ffdb4d;
+    }
+
+    .feature i {
+        color: #ffdb4d;
+        animation: bounce 1.5s ease-in-out infinite;
+    }
+
+    .feature:nth-child(1) i {
+        animation-delay: 0s;
+    }
+
+    .feature:nth-child(2) i {
+        animation-delay: 0.3s;
+    }
+
+    .feature:nth-child(3) i {
+        animation-delay: 0.6s;
+    }
+
+    @keyframes bounce {
+        0% {
+            transform: translateY(0);
+        }
+        20% {
+            transform: translateY(-10px);
+        }
+        40% {
+            transform: translateY(0);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+        80% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-3px);
+        }
+    }
+
+    .feature p {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+    }
+
+    .testimonials-carousel {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .testimonial {
+        background-color: #fff;
+        padding: 30px;
+        width: 300px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .testimonial p {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #555;
+        text-align: center;
+    }
+
+    /* Footer Section */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
