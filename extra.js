@@ -116,4 +116,3 @@ aboutContent.forEach(item => {
     observer.observe(item);
 });
 
-
