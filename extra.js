@@ -1,16 +1,48 @@
 // Smooth Scroll Effect for Navigation
 const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
+// Function to update the active class based on the current URL
+function updateActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop(); // Get the current page (e.g., "about.html")
+    
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        
+        // Remove 'active' class from all links
+        link.classList.remove('active');
+        
+        // Add 'active' class to the link that corresponds to the current page
+        if (linkHref.includes(currentPage)) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Call the function to set the active class when the page loads
+updateActiveLink();
+
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        window.scrollTo({
-            top: targetElement.offsetTop - document.querySelector('.navbar').offsetHeight,
-            behavior: 'smooth'
-        });
+
+        // Only handle the scroll if the link is an anchor link (i.e., internal page link)
+        if (this.getAttribute('href').startsWith('#')) {
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('.navbar').offsetHeight,
+                    behavior: 'smooth'
+                });
+            }
+        } else {
+            // For non-anchor links (i.e., regular page navigation), allow normal page navigation
+            window.location.href = this.getAttribute('href');
+        }
+
+        // Update the active class after navigating to another page
+        updateActiveLink();
     });
 });
 

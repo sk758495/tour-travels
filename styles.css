@@ -14,25 +14,7 @@
     }
 
     /* Custom hover behavior for dropdown menus */
-    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.3s ease;
-    }
-
-    /* Optional: To ensure the dropdown remains visible when hovering over the dropdown itself */
-    .navbar-nav .nav-item.dropdown:hover > .nav-link {
-        color: #0d6efd;  /* Change color on hover */
-    }
-
-    /* Optional: Add transition for smooth effect */
-    .dropdown-menu {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-    }
-
+  
     /* text video start here*/
     #trevel-text{
         height: 50vh;
