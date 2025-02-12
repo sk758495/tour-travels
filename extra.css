@@ -73,6 +73,7 @@
     font-weight: 600;
     outline: none;
     transition: .5s;
+    text-decoration: none;
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-item {
