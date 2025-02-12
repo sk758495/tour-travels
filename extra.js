@@ -3,20 +3,35 @@ const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
 // Function to update the active class based on the current URL
 function updateActiveLink() {
-    const currentPage = window.location.pathname.split("/").pop(); // Get the current page (e.g., "about.html")
+    const currentPage = window.location.pathname.split("/").pop().toLowerCase(); // Get the current page (e.g., "about.html")
     
     navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
+        const linkHref = link.getAttribute('href').toLowerCase();
         
         // Remove 'active' class from all links
         link.classList.remove('active');
         
         // Add 'active' class to the link that corresponds to the current page
-        if (linkHref.includes(currentPage)) {
+        if (linkHref === currentPage) {
             link.classList.add('active');
         }
     });
 }
+
+// Smooth scrolling behavior for anchor links
+document.querySelectorAll('.navbar-nav .nav-link').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+
+window.addEventListener('load', updateActiveLink);
+window.addEventListener('hashchange', updateActiveLink);
 
 // Call the function to set the active class when the page loads
 updateActiveLink();
